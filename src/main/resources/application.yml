@@ -1,0 +1,28 @@
+quarkus:
+  datasource:
+    db-kind: h2
+    jdbc:
+      url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      username: sa
+      password: ""
+      driver: org.h2.Driver
+    reactive: false
+
+  hibernate-orm:
+    database:
+      generation: drop-and-create
+    log:
+      sql: true
+
+  rest-client:
+    joke-api:
+      url: https://official-joke-api.appspot.com
+
+  swagger-ui:
+    always-include: true
+
+  smallrye-openapi:
+	info:
+	  title: Jokes API
+	  description: Provide jokes on demand
+	  version: 0.0.1
